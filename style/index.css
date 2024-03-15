@@ -1,0 +1,154 @@
+:root {
+    --fontTittle: "Pt Sans", sans-serif;
+    --fontText: "Open Sans", sans-serif;
+
+    /* ColorPalete */
+    --ColorLog: #FEA406;
+    --bgPrincipal: #F0ECE5;
+    --textColor: #FFFFFF;
+    --bgNavBar: #161A30;
+    --bgBox: #31304D;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 10px;
+    font-size: 1.6rem;
+    font-family: var(--fontText);
+}
+
+/* Utildades */
+img {
+    max-width: 100%;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.container {
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--fontTittle);
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 3.5rem;
+}
+
+h4 {
+    font-size: 2.2rem;
+}
+a{
+    text-decoration: none;
+    color: var(--textColor);
+}
+ul{
+    list-style: none;
+}
+/* Navigation */
+header {
+    background:var(--bgNavBar);
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+header .logo {
+    color: var(--textColor);
+    font-size: 30px;
+    text-transform: uppercase;
+}
+.bg__logo{
+    color: var(--ColorLog);
+}
+header nav ul {
+    display: flex;
+}
+header nav ul li a {
+    display: inline-block;
+    padding: 5px 0;
+    margin: 0 10px;
+    border: 3px solid transparent;
+    text-transform: uppercase;
+    transition: 0.2s;
+    text-decoration: none;
+}
+header nav ul li a:hover,
+header nav ul li a.active {
+    border-bottom-color: dodgerblue;
+}
+
+
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    background: #ffffff;
+}
+@media only screen and (max-width: 900px) {
+    header {
+        padding: 0 30px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .hamburger {
+        display: block;
+    }
+    header nav {
+        position: absolute;
+        width: 100%;
+        left: -100%;
+        top: 70px;
+        width: 100%;
+        background: var(--bgNavBar);
+        padding: 30px;
+        transition: 0.3s;
+    }
+    header #nav_check:checked ~ nav {
+        left: 0;
+    }
+    header nav ul {
+        display: block;
+    }
+    header nav ul li a {
+        margin: 5px 0;
+    }
+}
+
+/* end navigation */
